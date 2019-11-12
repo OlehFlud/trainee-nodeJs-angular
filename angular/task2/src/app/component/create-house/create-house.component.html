@@ -1,0 +1,20 @@
+<p>create-house works!</p>
+
+<a routerLink="/register">register</a>
+<router-outlet></router-outlet>
+
+<!--Create House Form-->
+
+<form #createHouseForm = "ngForm"  (ngSubmit)="createHouse()">
+  <input type="number" name="price" ngModel
+         #priceInput="ngModel" [(ngModel)]="house.price"
+         [ngStyle]="{backgroundColor: priceInput.invalid && priceInput.dirty ? 'red' : 'green'}"
+         required>
+
+  <input type="text" name="street" ngModel
+         #streetInput="ngModel" [(ngModel)]="house.street"
+         [ngStyle]="{backgroundColor: streetInput.invalid && streetInput.dirty ? 'red' : 'green'}"
+         required>
+
+  <button>Create</button>
+</form>
